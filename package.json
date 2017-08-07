@@ -8,14 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wilken92/pabloMonestelExamen.git"
   },
-  "author": "wilkenchg",
+  "author": "OlmanSA",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wilken92/pabloMonestelExamen/issues"
   },
-   "homepage": "https://github.com/wilken92/pabloMonestelExamen#readme",
    "dependencies": {
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",

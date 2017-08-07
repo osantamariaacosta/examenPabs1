@@ -68,12 +68,13 @@
       vm.buy = function(pProperty){
 
         var properties = propertyService.getProperties();
+        var player = vm.player;
 
         for (var i = 0; i < properties.length; i++) {
-          if (properties[i].name = pProperty.name) {
-              properties[i].owner == vm.player;
+          if (properties[i].name == pProperty.name) {
+              properties[i].owner = player;
               console.log(properties[i].name)
-              propertyService.setProperties(properties);
+              propertyService.setProperties(JSON.stringify(properties));
           }
         }
         init();
