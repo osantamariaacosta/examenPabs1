@@ -3,14 +3,13 @@
   .module('myApp')
   .service('propertyService', propertyService);
 
-  // Inicio de función jugadores.(Wilken)
   function propertyService(){
     var properties = [
     {
       name: "Mediterranean Avenue",
       id: "mediterraneanave",
       posistion: 2,
-      price: 60,
+      price: Number(60),
       rent: 2,
       owner: "Disponible",
       ohousecost: 50,
@@ -21,7 +20,7 @@
       name: "Baltic Avenue",
       id: "balticave",
       posistion: 4,
-      price: 60,
+      price: Number(60),
       rent: 4,
       owner: "Disponible",
       ohousecost: 50,
@@ -32,7 +31,7 @@
       name: "Oriental Avenue",
       id: "orientalave",
       posistion: 7,
-      price: 100,
+      price: Number(100),
       rent: 6,
       owner: "Disponible",
 
@@ -44,7 +43,7 @@
       name: "Vermont Avenue",
       id: "vermontave",
       posistion: 9,
-      price: 100,
+      price: Number(100),
       rent: 6,
       owner: "Disponible",
 
@@ -56,7 +55,7 @@
       name: "Connecticut Avenue",
       id: "connecticutave",
       posistion: 10,
-      price: 120,
+      price: Number(120),
       rent: 8,
       owner: "Disponible",
 
@@ -68,7 +67,7 @@
       name: "St. Charles Place",
       id: "stcharlesplace",
       posistion: 12,
-      price: 140,
+      price: Number(140),
       rent: 10,
       owner: "Disponible",
 
@@ -80,7 +79,7 @@
       name: "States Avenue",
       id: "statesave",
       posistion: 14,
-      price: 140,
+      price: Number(140),
       rent: 10,
       owner: "Disponible",
 
@@ -92,7 +91,7 @@
       name: "Virginia Avenue",
       id: "virginiaave",
       posistion: 15,
-      price: 160,
+      price: Number(160),
       rent: 12,
       owner: "Disponible",
 
@@ -104,7 +103,7 @@
       name: "St. James Place",
       id: "stjamesplace",
       posistion: 17,
-      price: 180,
+      price: Number(180),
       rent: 14,
       owner: "Disponible",
 
@@ -117,27 +116,23 @@
       setProperties : _setProperties,
       getProperties : _getProperties,
       updateProperty : _updateProperty,
-    }; // Cierre del publicAPI.(Wilken)
+    };
     return publicAPI;
 
-  // Inicio de la funcion jugadores, que se encarga de registar los datos en el localStorage.(Wilken)
     function _setProperties(pProperty){
       var propertiesList = _getProperties();
 
       propertiesList.push(pProperty);
       localStorage.setItem('lsPropertiesList', JSON.stringify(propertiesList));
-    }// Cierre de la función jugadores.(Wilken)
+    }
 
-    // Inicio de la función jugadores, que se encarga de obtener los datos más actualizados.(Wilken)
     function _getProperties(){
       var propertiesList = JSON.parse(localStorage.getItem('lsPropertiesList'));
       if(propertiesList == null){
         propertiesList = properties;
       }
       return propertiesList;
-    }// Cierre de la función jugadores.(Wilken)
-
-    // Inicio de la función jugadores, que se encarga de permitir la edición de datos.(Wilken)
+    }
     function _updateProperty(pobjProperty){
       var propertiesList = _getProperties();
       for(var i = 0; i < propertiesList.length; i++){
@@ -146,8 +141,8 @@
         }
       }
       localStorage.setItem('lsPropertiesList', JSON.stringify(propertiesList));
-    }// Cierre de la función jugadores.(Wilken)
+    }
 
 
-  }//Fin función jugadores.(Wilken)
+  }
 })();
